@@ -7,34 +7,5 @@
   isolation: isolate;
 }
 
-/* Oscurece la zona detrás del texto y se desvanece hacia los bordes */
-.hero-picture::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    transparent 5%,
-    rgba(32, 18, 23, 0.303) 32%,
-    rgba(32, 18, 23, 0.395) 70%,
-    transparent 100%
-  );
-}
 
-.hero-picture .picture-caption {
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  background: transparent;
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.681);
-}
-
-.hero-picture .picture-caption p {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-}
 
