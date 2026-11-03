@@ -2,3 +2,39 @@
 @media(max-width:760px){body{font-size:19px}.header{padding:20px 6%}.header nav{gap:22px;font-size:11px}.monogram{font-size:27px}.hero{grid-template-columns:1fr;padding:38px 7% 0;gap:0;text-align:center}.hero-copy{padding:0 0 32px}.hero-copy>.eyebrow{font-size:12px;margin-bottom:22px}.hero h1{font-size:clamp(58px,15vw,88px);line-height:.98;letter-spacing:-1px;margin-bottom:24px}.hero h1 span{padding:0;font-size:.4em;line-height:1.1;margin:4px 0 9px}.wedding-label{font-size:10px;margin-bottom:16px}.hero-verse{font-size:21px;max-width:340px;margin:0 auto 24px}.hero-picture{max-width:420px;margin:auto;aspect-ratio:4/4.3}.picture-caption{top:30%}.picture-caption>span{font-size:58px}.hero-bottom{margin-top:24px;padding:20px 0;text-align:left}.hero-bottom p{font-size:15px}.section{padding:64px 7%}h2{font-size:44px}.eyebrow{font-size:9px;letter-spacing:1.7px;margin-bottom:20px}.intro{padding-top:58px;padding-bottom:20px}.intro>p:not(.eyebrow){font-size:22px;line-height:1.6}.section-heading{display:block;margin-bottom:25px}.section-heading>p{max-width:none;font-size:17px;margin-top:15px}.gallery{padding-top:45px}.carousel-slide{aspect-ratio:4/4.5}.gallery-two .carousel-slide{aspect-ratio:4/4.5}.pending-text{font-size:29px;max-width:230px}.photo-pending small{font-size:8px;letter-spacing:1.5px}.carousel-controls{gap:10px;padding:14px 0}.carousel-controls>[data-step]{width:38px;height:38px}.carousel-position{font-size:10px}.carousel-dots{gap:0}.carousel-dots button{width:22px}.carousel-dots button:after{left:8px}.countdown{padding:54px 5%}.countdown h2{font-size:43px}.clock{gap:9px;margin:32px auto 28px}.clock>div{min-width:55px;gap:10px}.clock strong{font-size:53px}.clock span{font-size:8px;letter-spacing:1px}.clock>b{font-size:20px;padding-top:7px}.countdown>p:last-child{font-size:17px}.event-grid{grid-template-columns:1fr;gap:20px}.event{padding:25px 27px 30px}.event h3{font-size:43px}.event-time{font-size:38px}.venue{font-size:23px}.dress{padding:40px 7%;display:block}.dress h2{font-size:65px}.dress-copy>p:last-child{font-size:22px}.dress-note{display:none}.gifts,.rsvp{grid-template-columns:1fr;gap:35px}.gifts h2{font-size:42px}.gifts>div>p:last-child{font-size:21px}.bank summary{font-size:12px}.bank dd{font-size:11px}.rsvp-copy>p:not(.eyebrow){font-size:22px}.adults{margin-top:28px}.adults h3{font-size:30px}.adults p{font-size:18px}.rsvp form{padding:24px 22px}.rsvp label,.rsvp legend{font-size:11px}.radio-options{gap:8px 16px}.rsvp .radio-options label{font-size:11px}.closing{padding:58px 7% 50px}.closing h2{font-size:46px}.closing>p:not(.eyebrow){font-size:22px}.footer{padding:14px 7%;font-size:9px;gap:12px}.footer a{font-size:9px}}
 @media(max-width:350px){.clock{gap:5px}.clock>div{min-width:48px}.clock strong{font-size:47px}.clock span{font-size:7px}.hero h1{font-size:56px}.footer{flex-direction:column;gap:3px}.rsvp form{padding:22px 17px}.bank dd{font-size:10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+.hero-picture {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Oscurece la zona detrás del texto y se desvanece hacia los bordes */
+.hero-picture::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent 5%,
+    rgba(32, 18, 23, 0.303) 32%,
+    rgba(32, 18, 23, 0.395) 70%,
+    transparent 100%
+  );
+}
+
+.hero-picture .picture-caption {
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: transparent;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.681);
+}
+
+.hero-picture .picture-caption p {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
